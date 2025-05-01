@@ -1,11 +1,131 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Sitio Web</title>
+    <title>Menu - Restaurante</title>
+    <style>
+
+        html {
+            overflow: hidden;
+        }
+
+        body {
+            margin: 0 3rem;
+            padding: 0;
+            background: #8a8a8a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: serif;
+        }
+
+        .book {
+            width: 800px;
+            height: 95%;
+            position: relative;
+            perspective: 2000px;
+        }
+
+        .page {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            transform-origin: left;
+            transition: transform 1s;
+            background: white;
+            box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+        }
+
+        .page img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .page.flipped {
+            transform: rotateY(-180deg);
+        }
+
+        .page.flipped.resetindex {
+            z-index: 0 !important;
+        }
+
+        /* Z-index stacking for layering */
+        .page:nth-child(1) {
+            z-index: 8;
+        }
+
+        .page:nth-child(2) {
+            z-index: 7;
+        }
+
+        .page:nth-child(3) {
+            z-index: 6;
+        }
+
+        .page:nth-child(4) {
+            z-index: 5;
+        }
+
+        .page:nth-child(5) {
+            z-index: 4;
+        }
+
+        .page:nth-child(6) {
+            z-index: 3;
+        }
+
+        .page:nth-child(7) {
+            z-index: 2;
+        }
+
+        .page:nth-child(8) {
+            z-index: 1;
+        }
+    </style>
 </head>
+
 <body>
-    <h1>¡Bienvenidos a mi sitio web en GitHub!</h1>
+
+    <div class="book" id="book">
+        <div class="page"><img src="/img/Page-01.svg" alt="Portada"></div>
+        <div class="page"><img src="/img/Page-02.svg" alt="Página 1"></div>
+        <div class="page"><img src="/img/Page-03.svg" alt="Página 2"></div>
+        <div class="page"><img src="/img/Page-04.svg" alt="Página 3"></div>
+        <div class="page"><img src="/img/Page-05.svg" alt="Página 3"></div>
+        <div class="page"><img src="/img/Page-06.svg" alt="Página 3"></div>
+        <div class="page"><img src="/img/Page-07.svg" alt="Página 3"></div>
+        <div class="page"><img src="/img/Page-08.svg" alt="Contraportada"></div>
+    </div>
+
+    <script>
+        const pages = document.querySelectorAll(".page");
+        let currentPage = 0;
+
+        pages.forEach((page, index) => {
+            page.addEventListener("click", async () => {
+                if (index === currentPage) {
+                    page.classList.add("flipped");
+                    currentPage++;
+                    await wait(1);
+                    page.classList.add("resetindex");
+                } else if (index === currentPage - 1) {
+                    page.classList.remove("flipped");
+                    currentPage--;
+                    await wait(1);
+                    page.classList.remove("resetindex");
+                }
+            });
+        });
+
+        function wait( sec ) {
+            return new Promise( resolve => setTimeout( resolve, sec * 1000 ) );
+        }
+    </script>
+
 </body>
+
 </html>
