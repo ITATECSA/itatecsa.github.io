@@ -2,7 +2,7 @@ body {
     padding: 0;
     margin: 20rem 0 0;
     background-color: #8a8a8a;
-    background-image: url(../img/background_lg.jpg);
+    background-image: url(../img/background_sm.jpg);
     background-repeat: repeat-y;
     background-size: cover;
 }
