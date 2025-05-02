@@ -2,6 +2,9 @@ body {
     padding: 0;
     margin: 20rem 0 0;
     background-color: #8a8a8a;
+    background-image: url(../img/background_lg.jpg);
+    background-repeat: repeat-y;
+    background-size: cover;
 }
 
 
@@ -22,6 +25,7 @@ a {
     color: #eb0f57;
     text-align: center;
     text-transform: uppercase;
-    text-shadow: .15rem .15rem 3px #ffffff;
+    text-shadow: .15rem .15rem 3px #ffc70e;
     font-weight: bold;
+    border-bottom: .3rem solid #ffc70e;
 }

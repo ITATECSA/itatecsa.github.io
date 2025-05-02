@@ -5,17 +5,21 @@ body {
     display: flex;
     justify-content: center;
     flex-direction: column;
+    background-image: url(../img/background_lg.jpg);
+    background-repeat: repeat-y;
+    background-size: contain;
 }
 
 .book {
-    padding: 0 2rem;
+    padding: 0 1rem;
 }
 
 .book .page {
-    margin: 2rem 0;
+    margin: 4rem 0;
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
-    border-radius: 1rem;
+    border-radius: 1.5rem;
     overflow: hidden;
+    border: .3rem solid #ffc70e;
 }
 
 .book .page img {
@@ -33,7 +37,7 @@ body {
 .button-container a {
     text-decoration: unset;
     text-transform: uppercase;
-    text-shadow: .15rem .15rem 3px #ffffff;
+    text-shadow: .15rem .15rem 3px #ffc70e;
     background: #000000;
     padding: 1rem 5rem;
     font-size: 5rem;
@@ -41,4 +45,5 @@ body {
     color: #eb0f57;
     border-radius: 1rem;
     box-shadow: 0 0 1rem #000000;
+    border-bottom: .3rem solid #ffc70e;
 }
